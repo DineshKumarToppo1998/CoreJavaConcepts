@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.main;
 
 import com.practice.entity.Employee;
 import java.util.*;
@@ -266,7 +266,10 @@ public class Main {
 
         System.out.println();
         System.out.println("Create a list of the lengths of each employee's name");
+        Map<String, Integer> lengthOfNames ;
 
+        List<Integer> collect = employeeList.stream().map(employee -> employee.getName().length()).collect(Collectors.toList());
+        collect.forEach(System.out::println);
 
         System.out.println();
         System.out.println(": If you have a list of employee details as strings (e.g., \"Dinesh:10000\"), convert them into Employee objects using streams.");
@@ -288,6 +291,8 @@ public class Main {
 
         System.out.println();
         System.out.println("");
+
+
 
 
     }
